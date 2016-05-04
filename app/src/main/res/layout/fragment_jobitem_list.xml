@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="65dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/jobs_title"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:paddingTop="25dp"-->
+        <!--android:paddingBottom="20dp"-->
+        <!--android:textColor="@color/darkorange"-->
+        <!--android:textSize="21sp"-->
+        <!--android:text="Job List" />-->
+<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/jobs_list"
+    android:name="australia.godoer.pinupp.Views.Profile.Sections.JobItemFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    app:layoutManager="LinearLayoutManager"
+    tools:context="australia.godoer.pinupp.Views.Profile.Sections.JobItemFragment"
+    tools:listitem="@layout/fragment_jobitem" />
+    </LinearLayout>
+<android.support.design.widget.FloatingActionButton
+android:id="@+id/jobs_fab"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_gravity="bottom|end"
+android:layout_margin="@dimen/fab_margin"
+android:src="@drawable/add_button" />
+    </android.support.design.widget.CoordinatorLayout>

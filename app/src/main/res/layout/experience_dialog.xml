@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/exp_dialog_add_title_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp" >
+        <EditText
+            android:id="@+id/exp_dialog_add_title_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_new_exp" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:singleLine="true"
+            android:text="1"
+            android:id="@+id/exp_dialog_year_edit"/>
+
+        <!--<Spinner-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="0.38"-->
+            <!--android:id="@+id/exp_spinner1"-->
+            <!--style="@style/Base.Widget.AppCompat.Spinner.Underlined"-->
+            <!--android:prompt="@string/exp_spinner1_prompt"/>-->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:id="@+id/exp_years_txt"
+            android:text="Years"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:singleLine="true"
+            android:text="0"
+            android:id="@+id/exp_dialog_month_edit"/>
+
+        <!--<Spinner-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="0.38"-->
+            <!--android:id="@+id/exp_spinner2"-->
+            <!--style="@style/Base.Widget.AppCompat.Spinner.Underlined"-->
+            <!--android:prompt="@string/exp_spinner1_prompt"/>-->
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:id="@+id/exp_months_txt"
+            android:text="Months"/>
+
+    </LinearLayout>
+</LinearLayout>

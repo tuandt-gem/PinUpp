@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_message">Hi, Welcome to PinUpp. Let\'s create, share and impress with a smart cool profile!!</string>
+    <string name="get_started">Get Started</string>
+    <string name="preference_file_key">preference_pinupp_welcome</string>
+    <string name="forgot_my_password"><u>Oops forgot my password!</u></string>
+    <string name="action_logout">Log out</string>
+    <string name="action_logoff">Log off</string>
+    <string name="hint_firstname">First name</string>
+    <string name="hint_lastname">Last name</string>
+    <string name="hint_mobile">Mobile No.</string>
+    <string name="hint_address">Address</string>
+    <string name="hint_location">Location</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_website">Website</string>
+    <string name="hint_aboutme">About Me</string>
+    <string name="hint_available_in">Available in</string>
+    <string name="hint_degree_name">name of the qualification</string>
+    <string name="hint_degree_year">year</string>
+    <string name="hint_degree_institution">name of the awarding institution</string>
+    <string name="hint_new_skill">Enter the new skill</string>
+    <string name="exp_spinner1_prompt">Years</string>
+    <string name="contentDescPieChatBtn">generatePieChart</string>
+    <string name="hint_job_title">title of the job</string>
+    <string name="logo_choose">Choose logo</string>
+    <string name="hint_new_exp">New Experience</string>
+</resources>

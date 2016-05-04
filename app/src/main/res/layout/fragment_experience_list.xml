@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="65dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/empty_experience_msg"
+            android:gravity="center_horizontal"
+            android:paddingTop="25dp"
+            android:paddingBottom="20dp"
+            android:textColor="@color/darkorange"
+            android:textSize="21sp"
+            android:text="List is empty! Go ahead add a new item!"
+            android:visibility="gone"/>
+        <android.support.v7.widget.RecyclerView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/experience_list"
+            android:name="australia.godoer.pinupp.Views.Profile.Sections.ExperienceFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:layoutManager="LinearLayoutManager"
+            tools:context="australia.godoer.pinupp.Views.Profile.Sections.ExperienceFragment"
+            tools:listitem="@layout/fragment_experience" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exp_preview_chart"
+            android:layout_below="@id/experience_list"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:paddingLeft="35dp"
+            android:paddingRight="35dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:textAllCaps="false"
+            android:text="Preview &#10;Pie Chart"
+            android:background="@drawable/rounded_corner"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/experience_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/add_button" />
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:orientation="horizontal">
+    <!--<View-->
+        <!--android:layout_width="4dp"-->
+        <!--android:layout_height="15dp"-->
+        <!--android:layout_marginLeft="12dp"-->
+        <!--android:background="@color/darkorange"-->
+        <!--android:layout_gravity="center"/>-->
+
+  <LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="0.8"
+    android:id="@+id/job_content_wrapper"
+    android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/job_item_date"
+        android:text="date year"/>
+
+    <!-- //TODO add dimensions for devices -->
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:id="@+id/job_item_company_img"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/job_item_title1"
+            android:text="Job Title1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/job_item_title2"
+            android:text="Job Title2" />
+    </LinearLayout>
+</LinearLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/job_del_wrapper"
+        android:layout_weight="0.2">
+
+        <ImageView
+            android:id="@+id/job_del_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/darkorange"
+            android:layout_gravity="center"
+            android:src="@android:drawable/ic_menu_delete" />
+    </FrameLayout>
+<!--<View-->
+    <!--android:layout_width="4dp"-->
+    <!--android:layout_height="15dp"-->
+    <!--android:layout_marginLeft="12dp"-->
+    <!--android:background="@color/darkorange"-->
+    <!--android:layout_gravity="center"/>-->
+</LinearLayout>
