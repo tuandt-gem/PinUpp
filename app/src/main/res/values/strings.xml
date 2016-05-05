@@ -40,4 +40,6 @@
     <string name="hint_job_year">select the date</string>
     <string name="logo_choose">Choose logo</string>
     <string name="hint_new_exp">New Experience</string>
+    <string name="header_PinUP">PinUp</string>
+    <string name="example_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</string>
 </resources>
