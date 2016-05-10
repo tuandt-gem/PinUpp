@@ -20,6 +20,7 @@ import australia.godoer.pinupp.Models.User;
 import australia.godoer.pinupp.R;
 import australia.godoer.pinupp.Utils.CircularTransformation;
 import australia.godoer.pinupp.Utils.Helper;
+import australia.godoer.pinupp.Views.LoginActivity;
 
 public class NewProfileFragment extends Fragment {
 
@@ -63,6 +64,8 @@ public class NewProfileFragment extends Fragment {
                 if ( temp_title.length() > 0 ){
                     Profile new_profile = new Profile(temp_id,temp_title);
                     //saving the current user state
+                    new_profile.getMyInfo().setFirstName(ParseUser.getCurrentUser().getString(LoginActivity.PARSE_LOGIN_FIRST_NAME_KEY));
+                    new_profile.getMyInfo().setLastName(ParseUser.getCurrentUser().getString(LoginActivity.PARSE_LOGIN_LAST_NAME_KEY));
                     HomeActivity.current_user.getPROFILE_MAP().put(temp_id, new_profile);
                     ParseUser.getCurrentUser().put(User.PROFILE_MAP_KEY, new Gson().toJson(HomeActivity.current_user.getPROFILE_MAP()));
                     ParseUser.getCurrentUser().saveInBackground();

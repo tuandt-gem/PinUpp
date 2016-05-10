@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -82,18 +83,34 @@ public class MyInfoFragment extends Fragment implements CalendarDatePickerDialog
 
         final Calendar now = Calendar.getInstance();
         now.set(2016,01,01);
-        date_txt.setOnClickListener(new View.OnClickListener() {
+
+//        date_txt.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                CalendarDatePickerDialogFragment cdp = new CalendarDatePickerDialogFragment()
+//                        .setOnDateSetListener(MyInfoFragment.this)
+//                        .setFirstDayOfWeek(Calendar.SUNDAY)
+//                        .setPreselectedDate(2016, now.MONTH, now.DAY_OF_MONTH)
+//                        .setThemeDark();
+//                cdp.show(getActivity().getSupportFragmentManager(), "FRAG_TAG_DATE_PICKER");
+//            }
+//        });
+
+        date_txt.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                CalendarDatePickerDialogFragment cdp = new CalendarDatePickerDialogFragment()
-                        .setOnDateSetListener(MyInfoFragment.this)
-                        .setFirstDayOfWeek(Calendar.SUNDAY)
-                        .setPreselectedDate(2016, now.MONTH, now.DAY_OF_MONTH)
-                        .setThemeDark();
-                cdp.show(getActivity().getSupportFragmentManager(), "FRAG_TAG_DATE_PICKER");
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    CalendarDatePickerDialogFragment cdp = new CalendarDatePickerDialogFragment()
+                            .setOnDateSetListener(MyInfoFragment.this)
+                            .setFirstDayOfWeek(Calendar.SUNDAY)
+                            .setPreselectedDate(2016, now.MONTH, now.DAY_OF_MONTH)
+                            .setThemeDark();
+                    cdp.show(getActivity().getSupportFragmentManager(), "FRAG_TAG_DATE_PICKER");
+                }
+                return false;
             }
         });
-        //TODO save text on swipe away
+        //TODO save mText on swipe away
 
         final FloatingActionButton FAB = (FloatingActionButton) view.findViewById(R.id.myinfo_fab);
         FAB.setOnClickListener(new View.OnClickListener() {

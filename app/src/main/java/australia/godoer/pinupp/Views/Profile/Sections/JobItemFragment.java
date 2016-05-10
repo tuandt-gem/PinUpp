@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
@@ -91,15 +92,30 @@ public class JobItemFragment extends Fragment implements CalendarDatePickerDialo
                     final Calendar now = Calendar.getInstance();
                     now.set(2016,01,01);
                     date_txt = (EditText) customDialogView.findViewById(R.id.add_job_date);
-                    date_txt.setOnClickListener(new View.OnClickListener() {
+//                    date_txt.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            CalendarDatePickerDialogFragment cdp = new CalendarDatePickerDialogFragment()
+//                                    .setOnDateSetListener(JobItemFragment.this)
+//                                    .setFirstDayOfWeek(Calendar.SUNDAY)
+//                                    .setPreselectedDate(2016, now.MONTH, now.DAY_OF_MONTH)
+//                                    .setThemeDark();
+//                            cdp.show(getActivity().getSupportFragmentManager(), "FRAG_TAG_DATE_PICKER");
+//                        }
+//                    });
+
+                    date_txt.setOnTouchListener(new View.OnTouchListener() {
                         @Override
-                        public void onClick(View v) {
-                            CalendarDatePickerDialogFragment cdp = new CalendarDatePickerDialogFragment()
-                                    .setOnDateSetListener(JobItemFragment.this)
-                                    .setFirstDayOfWeek(Calendar.SUNDAY)
-                                    .setPreselectedDate(2016, now.MONTH, now.DAY_OF_MONTH)
-                                    .setThemeDark();
-                            cdp.show(getActivity().getSupportFragmentManager(), "FRAG_TAG_DATE_PICKER");
+                        public boolean onTouch(View v, MotionEvent event) {
+                            if (event.getAction() == MotionEvent.ACTION_UP) {
+                                CalendarDatePickerDialogFragment cdp = new CalendarDatePickerDialogFragment()
+                                        .setOnDateSetListener(JobItemFragment.this)
+                                        .setFirstDayOfWeek(Calendar.SUNDAY)
+                                        .setPreselectedDate(2016, now.MONTH, now.DAY_OF_MONTH)
+                                        .setThemeDark();
+                                cdp.show(getActivity().getSupportFragmentManager(), "FRAG_TAG_DATE_PICKER");
+                            }
+                            return false;
                         }
                     });
                 }

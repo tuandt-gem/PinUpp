@@ -15,4 +15,6 @@
     <dimen name="appbar_padding_top">8dp</dimen>
     <dimen name="header_height_image">120dp</dimen>
     <dimen name="header_height_image_line">100dp</dimen>
+    <dimen name="content_preview_overall_width">600dp</dimen>
+    <dimen name="screen_padding">10dp</dimen>
 </resources>

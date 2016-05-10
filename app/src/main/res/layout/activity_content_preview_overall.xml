@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.unnamed.b.atv.view.TwoDScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/preview_overall_content_ll"
+            android:orientation="vertical"
+            android:layout_width="900dp"
+            android:padding="10dp"
+            android:layout_height="wrap_content">
+
+            <!-- Profile -->
+            <include
+                layout="@layout/layout_preview_overall_profile"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Job history -->
+                <include
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    layout="@layout/layout_preview_overall_job_history"/>
+
+                <!-- Job experience -->
+                <include
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    layout="@layout/layout_preview_overall_experience"/>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content">
+                    <!-- Skills set -->
+                    <include
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        layout="@layout/layout_preview_overall_skills"/>
+
+                    <!-- Educational qualification -->
+                    <include
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        layout="@layout/layout_preview_overall_education"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+            android:layout_marginBottom="5dp"/>
+        </LinearLayout>
+    </com.unnamed.b.atv.view.TwoDScrollView>
+
+    <Button
+        android:id="@+id/preview_overall_save_bt"
+        android:text="Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:background="@color/orange"/>
+</LinearLayout>

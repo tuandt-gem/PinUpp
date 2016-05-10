@@ -2,13 +2,13 @@ package australia.godoer.pinupp.Views.Profile;
 
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,6 +27,7 @@ public class ProfileHomeFragment extends Fragment {
     TextView education_txt;
     TextView job_txt;
     TextView skills_txt;
+    Button mGenerateButton;
 
     public ProfileHomeFragment() {
         // Required empty public constructor
@@ -46,6 +47,7 @@ public class ProfileHomeFragment extends Fragment {
         education_txt = ((TextView) view.findViewById(R.id.profile_home_education_txt));
         job_txt = ((TextView) view.findViewById(R.id.profile_home_job_list_txt));
         skills_txt = ((TextView) view.findViewById(R.id.profile_home_skills_txt));
+        mGenerateButton = (Button) view.findViewById(R.id.new_profile_get_started_btn);
 
         if (getArguments() != null) {
             // specific profile
@@ -120,7 +122,7 @@ public class ProfileHomeFragment extends Fragment {
             @Override
             public boolean onLongClick(View v) {
                 Helper.showEditDialog(my_info_txt, getContext(), "New title");
-                //perf replace with text return from dialog
+                //perf replace with mText return from dialog
                 current_profile.getMyInfo().setTitle(my_info_txt.getText().toString());
                 return true;
             }
@@ -162,6 +164,14 @@ public class ProfileHomeFragment extends Fragment {
                 Helper.showEditDialog(skills_txt, getContext(), "New title");
                 current_profile.getMyskills().setTitle(skills_txt.getText().toString());
                 return true;
+            }
+        });
+
+        mGenerateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().startActivity(new Intent(getActivity(), PreviewOverallActivity.class)
+                        .putExtra(HomeActivity.PROFILE_OBJ_KEY,new Gson().toJson(current_profile)));
             }
         });
         return view;

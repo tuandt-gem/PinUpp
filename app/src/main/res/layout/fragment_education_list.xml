@@ -20,7 +20,7 @@
         <!--android:paddingBottom="20dp"-->
         <!--android:textColor="@color/darkorange"-->
         <!--android:textSize="21sp"-->
-        <!--android:text="Education" />-->
+        <!--android:mText="Education" />-->
 
 
         <android.support.v7.widget.RecyclerView

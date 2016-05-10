@@ -14,7 +14,7 @@
     <string name="action_logout">Log out</string>
     <string name="action_logoff">Log off</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder mText -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hint_firstname">First name</string>
     <string name="hint_lastname">Last name</string>
@@ -42,4 +42,8 @@
     <string name="hint_new_exp">New Experience</string>
     <string name="header_PinUP">PinUp</string>
     <string name="example_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</string>
+    <string name="title_current_position">Current position</string>
+    <string name="title_project_experience">Project Experience</string>
+    <string name="title_skill_set">Skill set</string>
+    <string name="title_educational">Educational qualification</string>
 </resources>
