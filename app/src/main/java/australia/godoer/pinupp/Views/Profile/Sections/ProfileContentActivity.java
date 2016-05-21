@@ -404,7 +404,17 @@ public class ProfileContentActivity extends AppCompatActivity implements Educati
     }
 
 
+    @Override
     public void showFileChooser() {
+        startChooseFile();
+    }
+
+    @Override
+    public void showEducationFileChooser() {
+        startChooseFile();
+    }
+
+    private void startChooseFile() {
         // This always works
         Intent i = new Intent(getApplicationContext(), FilePickerActivity.class);
         // This works if you defined the intent filter

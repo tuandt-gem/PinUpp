@@ -8,14 +8,17 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+
 import com.google.gson.Gson;
 
 import australia.godoer.pinupp.Adapters.MyEducationRecyclerViewAdapter;
@@ -32,7 +35,6 @@ import australia.godoer.pinupp.Views.Profile.HomeActivity;
  * interface.
  */
 public class EducationFragment extends Fragment {
-
     private OnListFragmentInteractionListener mListener;
     public static MyEducationRecyclerViewAdapter eduAdapter;
 
@@ -59,7 +61,7 @@ public class EducationFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     final int eduSize = ProfileContentActivity.current_profile.getEducation().getDegreesList().size();
-                    if(eduSize < 5){
+                    if (eduSize < 5) {
                         boolean wrapInScrollView = true;
                         MaterialDialog dialog = new MaterialDialog.Builder(getContext())
                                 .title("New Education")
@@ -72,14 +74,38 @@ public class EducationFragment extends Fragment {
                                         EditText yearTxt = (EditText) dialog.getCustomView().findViewById(R.id.add_qualification_year_edit);
                                         EditText instituteTxt = (EditText) dialog.getCustomView().findViewById(R.id.add_qualification_institution_edit);
                                         ProfileContentActivity.current_profile.getEducation().getDegreesList()
-                                                .put(eduSize + 1, new Education.Degrees(titleTxt.getText().toString(),instituteTxt.getText().toString(),yearTxt.getText().toString(),ProfileContentActivity.upload_uri));
+                                                .put(eduSize + 1, new Education.Degrees(titleTxt.getText().toString(), instituteTxt.getText().toString(), yearTxt.getText().toString(), ProfileContentActivity.upload_uri));
                                         ProfileContentActivity.upload_uri = "";
                                         recyclerView.getAdapter().notifyDataSetChanged();
+
+                                        View customDialogView = dialog.getCustomView();
+                                        // Logo
+                                        final ImageView logo = (ImageView) customDialogView.findViewById(R.id.add_qualification_dialog_logo_img);
+                                        logo.setOnClickListener(new View.OnClickListener() {
+                                                                    @Override
+                                                                    public void onClick(View view) {
+                                                                        Log.e("@@@@@", "@@@@@1234");
+                                                                        ProfileContentActivity.upload_img = logo;
+                                                                        mListener.showEducationFileChooser();
+                                                                    }
+                                                                }
+                                        );
                                     }
-                                })
-                                .show();
-                    }else{
-                        Helper.showMsg(getActivity().findViewById(R.id.container),"Can have only 5 items in free version", getResources().getColor(R.color.warnColor));
+                                }).build();
+                        View customDialogView = dialog.getCustomView();
+                        // Logo
+                        final ImageView logo = (ImageView) customDialogView.findViewById(R.id.add_qualification_dialog_logo_img);
+                        logo.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View view) {
+                                                        ProfileContentActivity.upload_img = logo;
+                                                        mListener.showEducationFileChooser();
+                                                    }
+                                                }
+                        );
+                        dialog.show();
+                    } else {
+                        Helper.showMsg(getActivity().findViewById(R.id.container), "Can have only 5 items in free version", getResources().getColor(R.color.warnColor));
                     }
                 }
             });
@@ -108,5 +134,7 @@ public class EducationFragment extends Fragment {
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
         void onEducationListInteraction(int item, int action);
+
+        void showEducationFileChooser();
     }
 }

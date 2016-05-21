@@ -85,7 +85,7 @@ public class User {
            }
        }
        ParseUser.getCurrentUser().put(PROFILE_MAP_KEY, new Gson().toJson(tempMap));
-       ParseUser.getCurrentUser().saveInBackground();
+       ParseUser.getCurrentUser().saveEventually();
    }
 
     public String getMobileNo() {

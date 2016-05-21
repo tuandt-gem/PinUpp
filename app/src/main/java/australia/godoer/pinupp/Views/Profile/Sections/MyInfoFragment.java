@@ -69,6 +69,7 @@ public class MyInfoFragment extends Fragment implements CalendarDatePickerDialog
             fname_edit.setText(current_myifo.getFirstName());
             lname_edit.setText(current_myifo.getLastName());
             mobile_edit.setText(current_myifo.getMobileNo());
+            address_edit.setText(current_myifo.getAddress());
             email_edit.setText(current_myifo.getEmail());
             location_edit.setText(current_myifo.getLocation());
             web_edit.setText(current_myifo.getWebsite());

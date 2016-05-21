@@ -90,7 +90,7 @@ public class JobItemFragment extends Fragment implements CalendarDatePickerDialo
                     );
 
                     final Calendar now = Calendar.getInstance();
-                    now.set(2016,01,01);
+                    now.set(2016, 1, 1);
                     date_txt = (EditText) customDialogView.findViewById(R.id.add_job_date);
 //                    date_txt.setOnClickListener(new View.OnClickListener() {
 //                        @Override
@@ -111,7 +111,7 @@ public class JobItemFragment extends Fragment implements CalendarDatePickerDialo
                                 CalendarDatePickerDialogFragment cdp = new CalendarDatePickerDialogFragment()
                                         .setOnDateSetListener(JobItemFragment.this)
                                         .setFirstDayOfWeek(Calendar.SUNDAY)
-                                        .setPreselectedDate(2016, now.MONTH, now.DAY_OF_MONTH)
+                                        .setPreselectedDate(2016, Calendar.MONTH, Calendar.DAY_OF_MONTH)
                                         .setThemeDark();
                                 cdp.show(getActivity().getSupportFragmentManager(), "FRAG_TAG_DATE_PICKER");
                             }
